@@ -34,7 +34,7 @@ dependencies {
 
 ## Android Injection
 
-If you have used the dagger android injection before make sure to remove the default android injection compiler
+If you have used the dagger android injection before make sure to remove the default android injection processor
 
 ```groovy
 dependencies {
