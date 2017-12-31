@@ -29,16 +29,8 @@ dependencies {
          
          // Required
          annotationProcessor 'com.github.IVIanuu.Contributer:contributer-processor:LATEST-VERSION'
-}
-```
-
-## Android Injection
-
-If you have used the dagger android injection before make sure to remove the default android injection processor
-
-```groovy
-dependencies {
-         // remove this line!!
+	 
+	 // remove this line!!
          annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
 }
 ```
