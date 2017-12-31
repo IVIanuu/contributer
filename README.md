@@ -143,7 +143,11 @@ the HasViewInjector with HasControllerInjector and so on.
 
 ## Custom types
 
-You can use component injection for every type just check out the view or conductor module to look how they are implemented.
+1. Create a annotation class annotated with @MapKey and a value with the supertype of the classes
+2. Replicate the HasSomeClassInjector, SomeClassInjection and SomeClassInjectionModule part
+3. Done:D
+
+You can check out the view or conductor module to look how they are implemented.
 
 ## License
 
