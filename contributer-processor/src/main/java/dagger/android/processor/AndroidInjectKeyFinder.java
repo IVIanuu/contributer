@@ -35,7 +35,7 @@ import static javax.lang.model.util.ElementFilter.methodsIn;
 import static javax.lang.model.util.ElementFilter.typesIn;
 
 /**
- * Finds android key registry
+ * Finds android key registry and contains a list of all supported map keys
  */
 final class AndroidInjectKeyFinder implements BasicAnnotationProcessor.ProcessingStep {
 
@@ -46,8 +46,7 @@ final class AndroidInjectKeyFinder implements BasicAnnotationProcessor.Processin
     private final Map<TypeMirror, TypeMirror> annotationsAndTypes = new HashMap<>();
 
     AndroidInjectKeyFinder(Elements elements,
-                           Messager messager,
-                           Types types) {
+                           Messager messager) {
         this.elements = elements;
         this.messager = messager;
 

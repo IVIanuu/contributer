@@ -53,34 +53,21 @@ import static javax.lang.model.element.Modifier.ABSTRACT;
  */
 @AutoValue
 abstract class AndroidInjectorDescriptor {
-  /** The type to be injected; the return type of the {@link ContributesAndroidInjector} method. */
+
   abstract ClassName injectedType();
 
-  /**
-   * The base framework type of {@link #injectedType()}, e.g. {@code Activity}, {@code Fragment},
-   * etc.
-   */
   abstract ClassName frameworkType();
 
-  /** Scopes to apply to the generated {@link dagger.Subcomponent}. */
   abstract ImmutableSet<AnnotationSpec> scopes();
 
-  /** @see ContributesAndroidInjector#modules() */
   abstract ImmutableSet<ClassName> modules();
 
-  /** The {@link Module} that contains the {@link ContributesAndroidInjector} method. */
   abstract ClassName enclosingModule();
 
-  /** The map key **/
   abstract ClassName mapKeyType();
 
-  /** Simple name of the {@link ContributesAndroidInjector} method. */
   abstract String methodName();
 
-  /**
-   * The {@link dagger.MapKey} annotation that groups {@link #frameworkType()}s, e.g.
-   * {@code @ActivityKey(MyActivity.class)}.
-   */
   AnnotationSpec mapKeyAnnotation() {
     return AnnotationSpec.builder(mapKeyType())
         .addMember("value", "$T.class", injectedType())
@@ -117,10 +104,6 @@ abstract class AndroidInjectorDescriptor {
       this.keyFinder = keyFinder;
     }
 
-    /**
-     * Validates a {@link ContributesAndroidInjector} method, returning an {@link
-     * AndroidInjectorDescriptor} if it is valid, or {@link Optional#empty()} otherwise.
-     */
     Optional<AndroidInjectorDescriptor> createIfValid(ExecutableElement method) {
       ErrorReporter reporter = new ErrorReporter(method, messager);
 

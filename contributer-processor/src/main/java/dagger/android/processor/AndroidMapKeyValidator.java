@@ -113,27 +113,12 @@ final class AndroidMapKeyValidator implements ProcessingStep {
           method);
     }
 
-    // @Binds methods should only have one parameter, but we can't guarantee the order of Processors
-    // in javac, so do a basic check for valid form
     if (isAnnotationPresent(method, Binds.class) && method.getParameters().size() == 1) {
       validateMapKeyMatchesBindsParameter(annotation, method);
     }
   }
 
-  /**
-   * A valid @Binds method could bind an {@link AndroidInjector.Factory} for one type, while giving
-   * it a map key of a different type. The return type and parameter type would pass typical @Binds
-   * validation, but the map lookup in {@link dagger.android.DispatchingAndroidInjector} would
-   * retrieve the wrong injector factory.
-   *
-   * <pre>{@code
-   * {@literal @Binds}
-   * {@literal @IntoMap}
-   * {@literal @ActivityKey(GreenActivity.class)}
-   * abstract AndroidInjector.Factory<? extends Activity> bindBlueActivity(
-   *     BlueActivityComponent.Builder builder);
-   * }</pre>
-   */
+
   private void validateMapKeyMatchesBindsParameter(
       Class<? extends Annotation> annotation, ExecutableElement method) {
     TypeMirror parameterType = getOnlyElement(method.getParameters()).asType();

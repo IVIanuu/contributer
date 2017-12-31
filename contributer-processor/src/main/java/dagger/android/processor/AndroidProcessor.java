@@ -42,7 +42,7 @@ public final class AndroidProcessor extends BasicAnnotationProcessor {
     Elements elements = processingEnv.getElementUtils();
     Types types = processingEnv.getTypeUtils();
 
-    AndroidInjectKeyFinder keyFinder = new AndroidInjectKeyFinder(elements, messager, types);
+    AndroidInjectKeyFinder keyFinder = new AndroidInjectKeyFinder(elements, messager);
 
     return ImmutableList.of(
             keyFinder,
