@@ -40,6 +40,7 @@ dependencies {
 Assume that your project contains a basic dagger setup.
 
 First add the @AndroidInjectorKeyRegistry annotation to a class in your project for example your app component.
+This the only extra step required compared to regular android injection.
 Here you have to add the @ViewKey.
 
 ```kotlin
