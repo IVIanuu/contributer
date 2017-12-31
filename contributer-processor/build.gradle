@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.ivianuu'
+
+dependencies {
+    // Annotations
+    implementation project(':contributer-annotations')
+
+    // Auto common
+    implementation rootProject.ext.autoCommon
+
+    // Auto value
+    implementation rootProject.ext.autoValue
+
+    // Auto service
+    implementation rootProject.ext.autoService
+
+    // Dagger
+    implementation rootProject.ext.dagger
+    implementation rootProject.ext.daggerAndroid
+    implementation rootProject.ext.daggerCompiler
+    implementation rootProject.ext.daggerAndroidProcessor
+
+    // Java poet
+    implementation rootProject.ext.javaPoet
+
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

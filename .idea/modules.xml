@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Contributer.iml" filepath="$PROJECT_DIR$/Contributer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contributer-annotations/contributer-annotations.iml" filepath="$PROJECT_DIR$/contributer-annotations/contributer-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contributer-conductor/contributer-conductor.iml" filepath="$PROJECT_DIR$/contributer-conductor/contributer-conductor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contributer-processor/contributer-processor.iml" filepath="$PROJECT_DIR$/contributer-processor/contributer-processor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contributer-view/contributer-view.iml" filepath="$PROJECT_DIR$/contributer-view/contributer-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/app.iml" filepath="$PROJECT_DIR$/sample/app.iml" />
+    </modules>
+  </component>
+</project>
