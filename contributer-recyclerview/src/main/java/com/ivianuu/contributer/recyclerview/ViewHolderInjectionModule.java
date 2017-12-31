@@ -14,4 +14,24 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview'
+package com.ivianuu.contributer.recyclerview;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+import java.util.Map;
+
+import dagger.Module;
+import dagger.android.AndroidInjector;
+import dagger.multibindings.Multibinds;
+
+/**
+ * View holder injection module
+ */
+@Module
+public abstract class ViewHolderInjectionModule {
+
+    @Multibinds
+    abstract Map<Class<? extends RecyclerView.ViewHolder>, AndroidInjector.Factory<? extends RecyclerView.ViewHolder>>
+    viewHolderInjectorFactories();
+}

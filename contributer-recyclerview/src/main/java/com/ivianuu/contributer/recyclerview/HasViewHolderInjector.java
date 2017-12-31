@@ -14,4 +14,16 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview'
+package com.ivianuu.contributer.recyclerview;
+
+import android.support.v7.widget.RecyclerView;
+
+import dagger.android.DispatchingAndroidInjector;
+
+/**
+ * Has view injector
+ */
+public interface HasViewHolderInjector {
+    /** Returns an android injector of viewholders. */
+    DispatchingAndroidInjector<RecyclerView.ViewHolder> viewHolderInjector();
+}

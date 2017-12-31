@@ -14,4 +14,19 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview'
+package com.ivianuu.contributer.sample.di.recycler;
+
+import com.ivianuu.contributer.sample.ui.recycler.MyViewHolder;
+
+import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
+
+/**
+ * @author Manuel Wrage (IVIanuu)
+ */
+@Module
+public abstract class ViewHolderBindingModule {
+
+    @ContributesAndroidInjector
+    abstract MyViewHolder bindMyViewHolder();
+}

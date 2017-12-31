@@ -35,6 +35,7 @@ android {
 dependencies {
     // Android support
     implementation rootProject.ext.supportAppCompat
+    implementation rootProject.ext.supportRecyclerView
 
     // Annotations
     implementation project(':contributer-annotations')
@@ -46,6 +47,11 @@ dependencies {
     implementation rootProject.ext.dagger
     annotationProcessor rootProject.ext.daggerCompiler
     implementation rootProject.ext.daggerAndroid
+
+    // Recyclerview
+    implementation project(':contributer-recyclerview')
+
+    // Processor
     annotationProcessor project(':contributer-processor')
 
     // View

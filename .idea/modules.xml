@@ -3,11 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Contributer.iml" filepath="$PROJECT_DIR$/Contributer.iml" />
+      <module fileurl="file://C:\Users\IVIanuu\AndroidStudioProjects\Contributer\sample\app.iml" filepath="C:\Users\IVIanuu\AndroidStudioProjects\Contributer\sample\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/contributer-annotations/contributer-annotations.iml" filepath="$PROJECT_DIR$/contributer-annotations/contributer-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/contributer-conductor/contributer-conductor.iml" filepath="$PROJECT_DIR$/contributer-conductor/contributer-conductor.iml" />
       <module fileurl="file://$PROJECT_DIR$/contributer-processor/contributer-processor.iml" filepath="$PROJECT_DIR$/contributer-processor/contributer-processor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contributer-recyclerview/contributer-recyclerview.iml" filepath="$PROJECT_DIR$/contributer-recyclerview/contributer-recyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/contributer-view/contributer-view.iml" filepath="$PROJECT_DIR$/contributer-view/contributer-view.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/app.iml" filepath="$PROJECT_DIR$/sample/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
   </component>
 </project>

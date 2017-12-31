@@ -14,4 +14,21 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview'
+package com.ivianuu.contributer.recyclerview;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+import dagger.MapKey;
+
+/**
+ * View holder key
+ */
+@MapKey
+@Target(ElementType.METHOD)
+public @interface ViewHolderKey {
+    Class<? extends RecyclerView.ViewHolder> value();
+}
