@@ -149,6 +149,10 @@ the HasViewInjector with HasControllerInjector and so on.
 
 You can check out the view or conductor module to look how they are implemented.
 
+## Fun fact
+
+Found out to late that contributer is a misspelling:DD
+
 ## License
 
 ```
