@@ -18,6 +18,7 @@ package com.ivianuu.contributer.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewParent;
 
 import dagger.android.AndroidInjector;
 
@@ -47,14 +48,25 @@ public final class ViewHolderInjection {
     }
 
     private static HasViewHolderInjector findHasViewHolderInjector(RecyclerView.ViewHolder viewHolder) {
-        if (viewHolder.itemView.getContext() instanceof HasViewHolderInjector) {
+        if (viewHolder.itemView.getParent() != null) {
+            ViewParent parent = viewHolder.itemView.getParent();
+            if (parent instanceof HasViewHolderInjector) {
+                return (HasViewHolderInjector) parent;
+            }
+
+            while ((parent = parent.getParent()) != null) {
+                if (parent instanceof HasViewHolderInjector) {
+                    return (HasViewHolderInjector) parent;
+                }
+            }
+        } else if (viewHolder.itemView.getContext() instanceof HasViewHolderInjector) {
             return (HasViewHolderInjector) viewHolder.itemView.getContext();
         } else if (viewHolder.itemView.getContext().getApplicationContext() instanceof HasViewHolderInjector) {
             return (HasViewHolderInjector) viewHolder.itemView.getContext().getApplicationContext();
-        } else {
-            throw new IllegalArgumentException(String.format(
-                    "No injector was found for %s", viewHolder.getClass().getCanonicalName()));
         }
+
+        throw new IllegalArgumentException(String.format(
+                "No injector was found for %s", viewHolder.getClass().getCanonicalName()));
     }
 
 }
