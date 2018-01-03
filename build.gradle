@@ -32,6 +32,7 @@ buildscript {
         dagger = "com.google.dagger:dagger:$daggerVersion"
         daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
         daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"
+        daggerAndroidSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
         daggerAndroidProcessor = "com.google.dagger:dagger-android-processor:$daggerVersion"
 
         supportVersion = '27.0.1'

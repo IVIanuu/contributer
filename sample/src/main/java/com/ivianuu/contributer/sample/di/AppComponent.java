@@ -18,46 +18,32 @@ package com.ivianuu.contributer.sample.di;
 
 import android.app.Application;
 
-import com.ivianuu.contributer.conductor.ConductorInjectionModule;
-import com.ivianuu.contributer.recyclerview.ViewHolderInjectionModule;
-import com.ivianuu.contributer.recyclerview.ViewHolderKey;
-import com.ivianuu.contributer.sample.App;
-import com.ivianuu.contributer.sample.di.activity.ActivityBindingModule;
-import com.ivianuu.contributer.sample.di.conductor.ControllerBindingModule;
-import com.ivianuu.contributer.sample.di.recycler.ViewHolderBindingModule;
-import com.ivianuu.contributer.sample.di.view.ViewBindingModule;
 import com.ivianuu.contributer.annotations.AndroidInjectorKeyRegistry;
+import com.ivianuu.contributer.conductor.ConductorInjectionModule;
+import com.ivianuu.contributer.conductor.ControllerKey;
+import com.ivianuu.contributer.sample.App;
+import com.ivianuu.contributer.sample.di.module.ActivityBindingModule;
+import com.ivianuu.contributer.view.ViewInjectionModule;
+import com.ivianuu.contributer.view.ViewKey;
 
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
-import com.ivianuu.contributer.conductor.ControllerKey;
-import com.ivianuu.contributer.view.ViewInjectionModule;
-import com.ivianuu.contributer.view.ViewKey;
 
 @AndroidInjectorKeyRegistry(
         keys = {
                 ControllerKey.class,
-                ViewKey.class,
-                ViewHolderKey.class
+                ViewKey.class
         }
 )
 @Singleton
 @Component(modules = {
         AndroidInjectionModule.class,
-        AppModule.class,
-        ActivityBindingModule.class,
-        // conductor
         ConductorInjectionModule.class,
-        ControllerBindingModule.class,
-        // recycler
-        ViewHolderInjectionModule.class,
-        ViewHolderBindingModule.class,
-        // view
         ViewInjectionModule.class,
-        ViewBindingModule.class
+        ActivityBindingModule.class,
 })
 public interface AppComponent {
     void inject(App app);

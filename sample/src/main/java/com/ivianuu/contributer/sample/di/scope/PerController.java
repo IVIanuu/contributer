@@ -14,27 +14,17 @@
  * limitations under the License.
  */
 
-package com.ivianuu.contributer.sample.ui.recycler;
+package com.ivianuu.contributer.sample.di.scope;
 
-import android.app.Application;
-import android.content.pm.PackageManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-import com.ivianuu.contributer.recyclerview.ViewHolderInjection;
-
-import javax.inject.Inject;
+import javax.inject.Scope;
 
 /**
- * @author Manuel Wrage (IVIanuu)
+ * Scope for {@link com.bluelinelabs.conductor.Controller}'s
  */
-public class MyViewHolder extends RecyclerView.ViewHolder {
-
-    @Inject Application application;
-    @Inject PackageManager packageManager;
-
-    public MyViewHolder(View itemView) {
-        super(itemView);
-        ViewHolderInjection.inject(this);
-    }
+@Scope
+@Retention(RetentionPolicy.RUNTIME)
+public @interface PerController {
 }

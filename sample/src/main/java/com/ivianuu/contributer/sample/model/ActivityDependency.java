@@ -14,19 +14,18 @@
  * limitations under the License.
  */
 
-package com.ivianuu.contributer.sample.di.recycler;
+package com.ivianuu.contributer.sample.model;
 
-import com.ivianuu.contributer.sample.ui.recycler.MyViewHolder;
+import com.ivianuu.contributer.sample.di.scope.PerActivity;
 
-import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import javax.inject.Inject;
 
 /**
- * @author Manuel Wrage (IVIanuu)
+ * Random dependency
  */
-@Module
-public abstract class ViewHolderBindingModule {
-
-    @ContributesAndroidInjector
-    abstract MyViewHolder bindMyViewHolder();
+@PerActivity
+public final class ActivityDependency {
+    @Inject
+    ActivityDependency() {
+    }
 }

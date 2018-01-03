@@ -45,11 +45,8 @@ dependencies {
 
     // Dagger
     implementation rootProject.ext.dagger
-    annotationProcessor rootProject.ext.daggerCompiler
     implementation rootProject.ext.daggerAndroid
-
-    // Recyclerview
-    implementation project(':contributer-recyclerview')
+    annotationProcessor rootProject.ext.daggerCompiler
 
     // Processor
     annotationProcessor project(':contributer-processor')
