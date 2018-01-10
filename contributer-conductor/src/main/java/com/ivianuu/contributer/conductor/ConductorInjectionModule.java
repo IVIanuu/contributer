@@ -1,7 +1,5 @@
 package com.ivianuu.contributer.conductor;
 
-import android.app.Activity;
-
 import com.bluelinelabs.conductor.Controller;
 
 import java.util.Map;

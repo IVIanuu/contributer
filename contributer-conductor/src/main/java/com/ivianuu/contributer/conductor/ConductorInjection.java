@@ -8,13 +8,16 @@ import dagger.android.DispatchingAndroidInjector;
 import dagger.internal.Preconditions;
 
 /**
- * Conductor injection
+ * Injection for {@link Controller}
  */
 public final class ConductorInjection {
 
     private ConductorInjection() {
     }
 
+    /**
+     * Injects the {@link Controller}
+     */
     public static void inject(Controller controller) {
         Preconditions.checkNotNull(controller, "controller");
         HasControllerInjector hasDispatchingControllerInjector = findHasControllerInjector(controller);

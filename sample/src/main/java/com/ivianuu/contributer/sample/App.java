@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.ivianuu.contributer.sample.di.DaggerAppComponent;
+import com.ivianuu.contributer.sample.di.module.ChildViewBindingModule_BindSampleChildView;
 
 import javax.inject.Inject;
 

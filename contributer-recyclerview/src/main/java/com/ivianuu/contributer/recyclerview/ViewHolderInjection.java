@@ -59,7 +59,9 @@ public final class ViewHolderInjection {
                     return (HasViewHolderInjector) parent;
                 }
             }
-        } else if (viewHolder.itemView.getContext() instanceof HasViewHolderInjector) {
+        }
+
+        if (viewHolder.itemView.getContext() instanceof HasViewHolderInjector) {
             return (HasViewHolderInjector) viewHolder.itemView.getContext();
         } else if (viewHolder.itemView.getContext().getApplicationContext() instanceof HasViewHolderInjector) {
             return (HasViewHolderInjector) viewHolder.itemView.getContext().getApplicationContext();

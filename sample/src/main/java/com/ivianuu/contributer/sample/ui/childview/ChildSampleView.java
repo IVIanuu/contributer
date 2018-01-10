@@ -59,7 +59,7 @@ public class ChildSampleView extends View {
         super.onAttachedToWindow();
         if (!injected) {
             injected = true;
-            // child views should be inject there dependencies in on attached to window
+            // child views should inject there dependencies in on attached to window
             ViewInjection.inject(this);
 
             checkNotNull(appDependency);

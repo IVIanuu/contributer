@@ -28,7 +28,7 @@ buildscript {
 
         conductor = 'com.bluelinelabs:conductor:2.1.4'
 
-        daggerVersion = '2.13'
+        daggerVersion = '2.14.1'
         dagger = "com.google.dagger:dagger:$daggerVersion"
         daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
         daggerAndroid = "com.google.dagger:dagger-android:$daggerVersion"

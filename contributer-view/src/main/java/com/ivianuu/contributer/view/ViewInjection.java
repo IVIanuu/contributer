@@ -44,7 +44,9 @@ public final class ViewInjection {
                     return (HasViewInjector) parent;
                 }
             }
-        } else if (view.getContext() instanceof HasViewInjector) {
+        }
+
+        if (view.getContext() instanceof HasViewInjector) {
             return (HasViewInjector) view.getContext();
         } else if (view.getContext().getApplicationContext() instanceof HasViewInjector) {
             return (HasViewInjector) view.getContext().getApplicationContext();
