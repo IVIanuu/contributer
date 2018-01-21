@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.bluelinelabs.conductor.Controller;
 
+import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.internal.Preconditions;
 
@@ -21,7 +22,7 @@ public final class ConductorInjection {
     public static void inject(Controller controller) {
         Preconditions.checkNotNull(controller, "controller");
         HasControllerInjector hasDispatchingControllerInjector = findHasControllerInjector(controller);
-        DispatchingAndroidInjector<Controller> controllerInjector = hasDispatchingControllerInjector.controllerInjector();
+        AndroidInjector<Controller> controllerInjector = hasDispatchingControllerInjector.controllerInjector();
         Preconditions.checkNotNull(controllerInjector, "%s.controllerInjector() returned null",
                 hasDispatchingControllerInjector.getClass().getCanonicalName());
         controllerInjector.inject(controller);
