@@ -18,6 +18,7 @@ package com.ivianuu.contributer.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 
+import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 
 /**
@@ -25,5 +26,5 @@ import dagger.android.DispatchingAndroidInjector;
  */
 public interface HasViewHolderInjector {
     /** Returns an android injector of viewholders. */
-    DispatchingAndroidInjector<RecyclerView.ViewHolder> viewHolderInjector();
+    AndroidInjector<RecyclerView.ViewHolder> viewHolderInjector();
 }

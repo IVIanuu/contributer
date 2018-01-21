@@ -3,6 +3,7 @@ package com.ivianuu.contributer.conductor;
 
 import com.bluelinelabs.conductor.Controller;
 
+import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 
 /**
@@ -10,5 +11,5 @@ import dagger.android.DispatchingAndroidInjector;
  */
 public interface HasControllerInjector {
     /** Returns an android injector of controllers. */
-    DispatchingAndroidInjector<Controller> controllerInjector();
+    AndroidInjector<Controller> controllerInjector();
 }
