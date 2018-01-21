@@ -2,7 +2,7 @@
 
 
 ## Introduction
-Dagger android injection is awesome right? But i only works for limited number of types..
+Dagger android injection is awesome right? But it only works for a limited number of types..
 With contributer you can use the @ContributesAndroidInjector pattern for each type such as views or conductor controllers.
 
 ## Download
