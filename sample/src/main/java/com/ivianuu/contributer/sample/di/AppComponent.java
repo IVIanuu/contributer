@@ -21,8 +21,12 @@ import android.app.Application;
 import com.ivianuu.contributer.annotations.AndroidInjectorKeyRegistry;
 import com.ivianuu.contributer.conductor.ConductorInjectionModule;
 import com.ivianuu.contributer.conductor.ControllerKey;
+import com.ivianuu.contributer.recyclerview.ViewHolderInjectionModule;
+import com.ivianuu.contributer.recyclerview.ViewHolderKey;
 import com.ivianuu.contributer.sample.App;
 import com.ivianuu.contributer.sample.di.module.ActivityBindingModule;
+import com.ivianuu.contributer.supportpreference.SupportPreferenceInjectionModule;
+import com.ivianuu.contributer.supportpreference.SupportPreferenceKey;
 import com.ivianuu.contributer.view.ViewInjectionModule;
 import com.ivianuu.contributer.view.ViewKey;
 
@@ -31,18 +35,25 @@ import javax.inject.Singleton;
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
+import dagger.android.support.AndroidSupportInjectionModule;
 
 @AndroidInjectorKeyRegistry(
         keys = {
                 ControllerKey.class,
-                ViewKey.class
+                SupportPreferenceKey.class,
+                ViewKey.class,
+                ViewHolderKey.class
         }
 )
 @Singleton
 @Component(modules = {
         AndroidInjectionModule.class,
+        AndroidSupportInjectionModule.class,
         ConductorInjectionModule.class,
+        SupportPreferenceInjectionModule.class,
         ViewInjectionModule.class,
+        ViewHolderInjectionModule.class,
+
         ActivityBindingModule.class,
 })
 public interface AppComponent {

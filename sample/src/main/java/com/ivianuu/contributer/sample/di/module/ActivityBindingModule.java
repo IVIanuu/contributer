@@ -30,7 +30,8 @@ public abstract class ActivityBindingModule {
 
     @PerActivity
     @ContributesAndroidInjector(modules = {
-            ControllerBindingModule.class
+            ControllerBindingModule.class,
+            FragmentBindingModule.class
     })
     abstract SampleActivity bindSampleActivity();
 }

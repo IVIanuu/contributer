@@ -25,7 +25,7 @@ import dagger.android.AndroidInjector;
 import static dagger.internal.Preconditions.checkNotNull;
 
 /**
- * View injection
+ * View holder injection
  */
 public final class ViewHolderInjection {
 

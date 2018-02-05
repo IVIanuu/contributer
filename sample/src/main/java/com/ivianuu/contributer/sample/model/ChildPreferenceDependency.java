@@ -14,4 +14,20 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview', ':contributer-supportpreference'
+package com.ivianuu.contributer.sample.model;
+
+
+import com.ivianuu.contributer.sample.di.scope.PerChildPreference;
+
+import javax.inject.Inject;
+
+/**
+ * Random dependency
+ */
+@PerChildPreference
+public final class ChildPreferenceDependency {
+    @Inject
+    ChildPreferenceDependency() {
+    }
+}
+

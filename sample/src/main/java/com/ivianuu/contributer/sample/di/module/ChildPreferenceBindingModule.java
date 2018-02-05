@@ -14,4 +14,22 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview', ':contributer-supportpreference'
+package com.ivianuu.contributer.sample.di.module;
+
+
+import com.ivianuu.contributer.sample.di.scope.PerChildPreference;
+import com.ivianuu.contributer.sample.ui.childpreference.SampleChildPreference;
+
+import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
+
+/**
+ * Binding module for child {@link android.support.v7.preference.Preference}'s
+ */
+@Module
+abstract class ChildPreferenceBindingModule {
+
+    @PerChildPreference
+    @ContributesAndroidInjector
+    abstract SampleChildPreference bindSamplePreference();
+}

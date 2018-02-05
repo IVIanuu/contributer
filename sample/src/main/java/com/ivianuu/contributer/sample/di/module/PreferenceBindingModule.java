@@ -14,4 +14,24 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview', ':contributer-supportpreference'
+package com.ivianuu.contributer.sample.di.module;
+
+import com.ivianuu.contributer.sample.di.scope.PerPreference;
+import com.ivianuu.contributer.sample.ui.preference.SamplePreferenceGroup;
+
+import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
+
+/**
+ * Binding module for {@link com.bluelinelabs.conductor.Controller}'s
+ */
+@Module
+abstract class PreferenceBindingModule {
+
+    @PerPreference
+    @ContributesAndroidInjector(modules = {
+            ChildPreferenceBindingModule.class
+    })
+    abstract SamplePreferenceGroup bindSamplePreferenceGroup();
+
+}

@@ -14,4 +14,23 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview', ':contributer-supportpreference'
+package com.ivianuu.contributer.sample.di.module;
+
+import com.ivianuu.contributer.sample.di.scope.PerChildFragment;
+import com.ivianuu.contributer.sample.ui.childfragment.SampleChildFragment;
+
+import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
+
+/**
+ * Binding module for child {@link android.support.v4.app.Fragment}'s
+ */
+@Module
+abstract class ChildFragmentBindingModule {
+
+    @PerChildFragment
+    @ContributesAndroidInjector(modules = {
+            PreferenceBindingModule.class
+    })
+    abstract SampleChildFragment bindSampleChildFragment();
+}

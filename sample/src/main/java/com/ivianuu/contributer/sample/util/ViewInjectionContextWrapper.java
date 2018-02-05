@@ -22,7 +22,7 @@ import android.view.View;
 
 import com.ivianuu.contributer.view.HasViewInjector;
 
-import dagger.android.DispatchingAndroidInjector;
+import dagger.android.AndroidInjector;
 
 /**
  * Wraps a {@link Context} and is a {@link HasViewInjector}
@@ -41,7 +41,7 @@ public class ViewInjectionContextWrapper extends ContextWrapper implements HasVi
     }
 
     @Override
-    public DispatchingAndroidInjector<View> viewInjector() {
+    public AndroidInjector<View> viewInjector() {
         // delegate to the "real" injector
         return viewInjector.viewInjector();
     }

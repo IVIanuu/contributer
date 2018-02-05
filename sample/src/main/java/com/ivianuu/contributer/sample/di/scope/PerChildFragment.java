@@ -14,4 +14,17 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview', ':contributer-supportpreference'
+package com.ivianuu.contributer.sample.di.scope;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import javax.inject.Scope;
+
+/**
+ * Scope for child {@link android.support.v4.app.Fragment}'s
+ */
+@Scope
+@Retention(RetentionPolicy.RUNTIME)
+public @interface PerChildFragment {
+}

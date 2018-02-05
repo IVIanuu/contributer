@@ -19,6 +19,7 @@ package com.ivianuu.contributer.sample.ui.activity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.ViewGroup;
@@ -32,20 +33,25 @@ import com.ivianuu.contributer.sample.R;
 import com.ivianuu.contributer.sample.model.ActivityDependency;
 import com.ivianuu.contributer.sample.model.AppDependency;
 import com.ivianuu.contributer.sample.ui.controller.SampleController;
+import com.ivianuu.contributer.sample.ui.fragment.SampleFragment;
 
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
+import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
+import dagger.android.support.HasSupportFragmentInjector;
 
 import static android.support.v4.util.Preconditions.checkNotNull;
 
 /**
  * Sample activity
  */
-public class SampleActivity extends AppCompatActivity implements HasControllerInjector {
+public class SampleActivity extends AppCompatActivity implements HasControllerInjector, HasSupportFragmentInjector {
 
     @Inject DispatchingAndroidInjector<Controller> controllerInjector;
+    @Inject DispatchingAndroidInjector<Fragment> supportFragmentInjector;
+
     @Inject AppDependency appDependency;
     @Inject ActivityDependency activityDependency;
 
@@ -70,6 +76,13 @@ public class SampleActivity extends AppCompatActivity implements HasControllerIn
         if (!router.hasRootController()) {
             router.setRoot(RouterTransaction.with(new SampleController()));
         }
+
+        // attach fragment
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new SampleFragment())
+                    .commitNowAllowingStateLoss();
+        }
     }
 
     @Override
@@ -82,5 +95,10 @@ public class SampleActivity extends AppCompatActivity implements HasControllerIn
     @Override
     public DispatchingAndroidInjector<Controller> controllerInjector() {
         return controllerInjector;
+    }
+
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return supportFragmentInjector;
     }
 }

@@ -18,7 +18,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "com.ivianuu.contributer.sample"
@@ -46,10 +45,17 @@ dependencies {
     // Dagger
     implementation rootProject.ext.dagger
     implementation rootProject.ext.daggerAndroid
+    implementation rootProject.ext.daggerAndroidSupport
     annotationProcessor rootProject.ext.daggerCompiler
 
     // Processor
     annotationProcessor project(':contributer-processor')
+
+    // RecyclerView
+    implementation project(':contributer-recyclerview')
+
+    // Support Preference
+    implementation project(':contributer-supportpreference')
 
     // View
     implementation project(':contributer-view')

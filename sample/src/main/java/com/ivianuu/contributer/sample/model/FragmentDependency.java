@@ -14,4 +14,18 @@
  * limitations under the License.
  */
 
-include ':sample', ':contributer-annotations', ':contributer-processor', ':contributer-view', ':contributer-conductor', ':contributer-recyclerview', ':contributer-supportpreference'
+package com.ivianuu.contributer.sample.model;
+
+import com.ivianuu.contributer.sample.di.scope.PerFragment;
+
+import javax.inject.Inject;
+
+/**
+ * Random dependency
+ */
+@PerFragment
+public final class FragmentDependency {
+    @Inject
+    FragmentDependency() {
+    }
+}

@@ -22,7 +22,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 
 /**
- * Has view injector
+ * Has view holder injector
  */
 public interface HasViewHolderInjector {
     /** Returns an android injector of viewholders. */
