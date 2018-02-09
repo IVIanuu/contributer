@@ -29,8 +29,6 @@ import dagger.android.ContributesAndroidInjector;
 abstract class ChildFragmentBindingModule {
 
     @PerChildFragment
-    @ContributesAndroidInjector(modules = {
-            PreferenceBindingModule.class
-    })
+    @ContributesAndroidInjector
     abstract SampleChildFragment bindSampleChildFragment();
 }

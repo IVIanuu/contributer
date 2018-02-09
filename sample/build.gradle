@@ -54,9 +54,6 @@ dependencies {
     // RecyclerView
     implementation project(':contributer-recyclerview')
 
-    // Support Preference
-    implementation project(':contributer-supportpreference')
-
     // View
     implementation project(':contributer-view')
 }

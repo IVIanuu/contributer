@@ -25,8 +25,6 @@ import com.ivianuu.contributer.recyclerview.ViewHolderInjectionModule;
 import com.ivianuu.contributer.recyclerview.ViewHolderKey;
 import com.ivianuu.contributer.sample.App;
 import com.ivianuu.contributer.sample.di.module.ActivityBindingModule;
-import com.ivianuu.contributer.supportpreference.SupportPreferenceInjectionModule;
-import com.ivianuu.contributer.supportpreference.SupportPreferenceKey;
 import com.ivianuu.contributer.view.ViewInjectionModule;
 import com.ivianuu.contributer.view.ViewKey;
 
@@ -40,7 +38,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @AndroidInjectorKeyRegistry(
         keys = {
                 ControllerKey.class,
-                SupportPreferenceKey.class,
                 ViewKey.class,
                 ViewHolderKey.class
         }
@@ -50,7 +47,6 @@ import dagger.android.support.AndroidSupportInjectionModule;
         AndroidInjectionModule.class,
         AndroidSupportInjectionModule.class,
         ConductorInjectionModule.class,
-        SupportPreferenceInjectionModule.class,
         ViewInjectionModule.class,
         ViewHolderInjectionModule.class,
 

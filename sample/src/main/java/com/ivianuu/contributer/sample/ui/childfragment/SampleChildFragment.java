@@ -19,8 +19,7 @@ package com.ivianuu.contributer.sample.ui.childfragment;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceFragmentCompat;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,9 +30,6 @@ import com.ivianuu.contributer.sample.model.ActivityDependency;
 import com.ivianuu.contributer.sample.model.AppDependency;
 import com.ivianuu.contributer.sample.model.ChildFragmentDependency;
 import com.ivianuu.contributer.sample.model.FragmentDependency;
-import com.ivianuu.contributer.sample.util.PreferenceInjectionContextWrapper;
-import com.ivianuu.contributer.sample.util.ViewInjectionContextWrapper;
-import com.ivianuu.contributer.supportpreference.HasSupportPreferenceInjector;
 
 import javax.inject.Inject;
 
@@ -46,9 +42,7 @@ import static android.support.v4.util.Preconditions.checkNotNull;
 /**
  * @author Manuel Wrage (IVIanuu)
  */
-public class SampleChildFragment extends PreferenceFragmentCompat implements HasSupportPreferenceInjector {
-
-    @Inject DispatchingAndroidInjector<Preference> preferenceInjector;
+public class SampleChildFragment extends Fragment {
 
     @Inject AppDependency appDependency;
     @Inject ActivityDependency activityDependency;
@@ -68,22 +62,5 @@ public class SampleChildFragment extends PreferenceFragmentCompat implements Has
         checkNotNull(childFragmentDependency);
 
         Log.d(getClass().getSimpleName(), "successfully injected");
-    }
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.preferences);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Context wrappedContext = new PreferenceInjectionContextWrapper(inflater.getContext(), this);
-        LayoutInflater wrappedInflated = inflater.cloneInContext(wrappedContext);
-        return super.onCreateView(wrappedInflated, container, savedInstanceState);
-    }
-
-    @Override
-    public AndroidInjector<Preference> supportPreferenceInjector() {
-        return preferenceInjector;
     }
 }
